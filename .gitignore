@@ -1,0 +1,7 @@
+dist/
+release/
+*.tmp
+*.pdb
+*.user
+InstallerTests.exe
+installer-qa/
