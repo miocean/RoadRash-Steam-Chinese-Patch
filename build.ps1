@@ -2,7 +2,7 @@ $ErrorActionPreference = 'Stop'
 $compiler = Join-Path $env:WINDIR 'Microsoft.NET\Framework\v4.0.30319\csc.exe'
 if (!(Test-Path -LiteralPath $compiler)) { throw '.NET Framework 4.x C# compiler not found.' }
 $payload = Join-Path $PSScriptRoot 'payload\ENU.DLL'
-$expected = 'c779889a719e0f8a0c1f033c57a4ce37b4ae4d7f5106d3d68550d0c0d06b5d58'
+$expected = 'ebb8b2c7168907730a3d7a57638646918581f48cfed4e20cb3afad7c4df8c1cb'
 if ((Get-FileHash -LiteralPath $payload -Algorithm SHA256).Hash.ToLowerInvariant() -ne $expected) { throw 'Payload hash mismatch.' }
 $out = Join-Path $PSScriptRoot 'dist'
 New-Item -ItemType Directory -Path $out -Force | Out-Null

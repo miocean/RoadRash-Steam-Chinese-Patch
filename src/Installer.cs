@@ -14,7 +14,7 @@ public static class PatchEngine
 {
     public const string OriginalHash = "2309d5b30560103c7a8b3b97e626877fb89fd85164f82186082dc1c665466e70";
     public const string LegacyHash = "72719efdf007c46ca50c7b40b30c170a26d335595010af98839cfa0563e81d26";
-    public const string PayloadHash = "c779889a719e0f8a0c1f033c57a4ce37b4ae4d7f5106d3d68550d0c0d06b5d58";
+    public const string PayloadHash = "ebb8b2c7168907730a3d7a57638646918581f48cfed4e20cb3afad7c4df8c1cb";
     public const string ExeHash = "9e40e25737149ab095061b7154797a35495faea97644fafc5a1e616f1400c968";
     [DllImport("kernel32.dll")] public static extern uint GetACP();
     public static void ValidateCodePage(uint codePage)
