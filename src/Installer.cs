@@ -6,12 +6,19 @@ using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 public static class PatchEngine
 {
     public const string OriginalHash = "2309d5b30560103c7a8b3b97e626877fb89fd85164f82186082dc1c665466e70";
     public const string PayloadHash = "72719efdf007c46ca50c7b40b30c170a26d335595010af98839cfa0563e81d26";
     public const string ExeHash = "9e40e25737149ab095061b7154797a35495faea97644fafc5a1e616f1400c968";
+    [DllImport("kernel32.dll")] public static extern uint GetACP();
+    public static void ValidateCodePage(uint codePage)
+    {
+        if (codePage != 936)
+            throw new IOException("当前系统的非 Unicode 程序代码页为 " + codePage + "，此汉化需要简体中文代码页 936。\r\n为避免游戏出现乱码，本次操作已停止。请在兼容环境中使用；安装器不会自动修改系统区域设置。还原英文不受此限制。");
+    }
     public static string Hash(string file)
     {
         using (var sha = SHA256.Create())
@@ -50,10 +57,17 @@ public static class PatchEngine
     public static string Check(string directory)
     {
         string root = Root(directory);
+        ValidateCodePage(GetACP());
         if (Hash(Path.Combine(root, "RoadRash95.exe")) != ExeHash)
             throw new IOException("游戏主程序版本不匹配，此补丁适用于制作时的 Steam 30 周年纪念版。未修改任何游戏文件。");
         string current = Hash(Path.Combine(root, "TEXT", "ENU.DLL"));
-        if (current == OriginalHash) return "检测通过：英文原版，可安装汉化。";
+        if (current == OriginalHash)
+        {
+            string existingBackup = Path.Combine(root, "Codex-ZH-backup-v1", "ENU.DLL");
+            if (File.Exists(existingBackup) && Hash(existingBackup) != OriginalHash)
+                throw new IOException("备份文件与英文原版不一致。本次安装已取消，不会覆盖备份。");
+            return "检测通过：游戏版本和英文语言文件匹配，系统代码页为936，可安装汉化。";
+        }
         if (current != PayloadHash) throw new IOException("语言文件与适配版本不符。未修改任何游戏文件。");
         string backup = Path.Combine(root, "Codex-ZH-backup-v1", "ENU.DLL");
         if (!File.Exists(backup) || Hash(backup) != OriginalHash)
@@ -117,30 +131,46 @@ public static class PatchEngine
 public sealed class InstallerForm : Form
 {
     private TextBox directory;
-    private TextBox log;
+    private RichTextBox log;
     private Label status;
     private Button install, restore, browse, check;
     public InstallerForm()
     {
-        Text = "暴力摩托汉化补丁 · v1.1";
-        ClientSize = new Size(680, 494);
-        MinimumSize = new Size(696, 533);
-        FormBorderStyle = FormBorderStyle.FixedDialog;
-        MaximizeBox = false;
-        StartPosition = FormStartPosition.CenterScreen;
+        SuspendLayout();
+        AutoScaleDimensions = new SizeF(96F, 96F);
         AutoScaleMode = AutoScaleMode.Dpi;
         Font = new Font("Microsoft YaHei UI", 10F);
+        Text = "暴力摩托汉化补丁 · v1.2";
+        ClientSize = new Size(680, 560);
+        MinimumSize = new Size(696, 599);
+        StartPosition = FormStartPosition.CenterScreen;
         BackColor = Color.FromArgb(247, 248, 250);
-        var header = new Panel { Dock = DockStyle.Top, Height = 105, BackColor = Color.FromArgb(25, 37, 55) };
-        header.Controls.Add(new Label { Text = "暴力摩托 · 简体中文补丁", Location = new Point(26, 19), Size = new Size(610, 34), Font = new Font(Font.FontFamily, 20F, FontStyle.Bold), ForeColor = Color.White });
-        header.Controls.Add(new Label { Text = "Steam 30 周年纪念版   /   977 条译文 · 480 条人物对话", Location = new Point(28, 67), AutoSize = true, ForeColor = Color.FromArgb(196, 210, 227) });
-        Controls.Add(header);
-        Controls.Add(new Label { Text = "游戏安装目录", Location = new Point(26, 128), AutoSize = true });
-        directory = new TextBox { Location = new Point(28, 158), Size = new Size(508, 29), AccessibleName = "游戏安装目录" };
+        var layout = new TableLayoutPanel { Dock = DockStyle.Fill, ColumnCount = 1, RowCount = 2, Margin = Padding.Empty };
+        layout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
+        layout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+        layout.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
+        Controls.Add(layout);
+        var header = new FlowLayoutPanel { Dock = DockStyle.Fill, AutoSize = true, AutoSizeMode = AutoSizeMode.GrowAndShrink, FlowDirection = FlowDirection.TopDown, WrapContents = false, Margin = Padding.Empty, Padding = new Padding(26, 18, 26, 18), BackColor = Color.FromArgb(25, 37, 55) };
+        header.Controls.Add(new Label { Name = "HeaderTitle", Text = "暴力摩托 · 简体中文补丁", AutoSize = true, Margin = new Padding(0, 0, 0, 8), Font = new Font(Font.FontFamily, 20F, FontStyle.Bold), ForeColor = Color.White });
+        header.Controls.Add(new Label { Text = "Steam 30 周年纪念版   /   977 条译文 · 480 条人物对话", AutoSize = true, Margin = Padding.Empty, ForeColor = Color.FromArgb(196, 210, 227) });
+        layout.Controls.Add(header, 0, 0);
+        var body = new TableLayoutPanel { Dock = DockStyle.Fill, ColumnCount = 1, RowCount = 7, Padding = new Padding(26, 18, 26, 12), Margin = Padding.Empty };
+        body.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
+        for (int row = 0; row < 7; row++) body.RowStyles.Add(new RowStyle(row == 5 ? SizeType.Percent : SizeType.AutoSize, row == 5 ? 100 : 0));
+        layout.Controls.Add(body, 0, 1);
+        body.Controls.Add(new Label { Text = "游戏安装目录", AutoSize = true, Dock = DockStyle.Fill, Margin = new Padding(0, 0, 0, 6) }, 0, 0);
+        var pathRow = new TableLayoutPanel { Dock = DockStyle.Fill, AutoSize = true, ColumnCount = 2, RowCount = 1, Margin = Padding.Empty };
+        pathRow.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
+        pathRow.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
+        body.Controls.Add(pathRow, 0, 1);
+        directory = new TextBox { Dock = DockStyle.Fill, Margin = new Padding(0, 4, 12, 0), AccessibleName = "游戏安装目录" };
         string adjacent = AppDomain.CurrentDomain.BaseDirectory;
-        directory.Text = File.Exists(Path.Combine(adjacent, "RoadRash95.exe")) ? adjacent : "E:\\SteamLibrary\\steamapps\\common\\RoadRash";
-        Controls.Add(directory);
-        browse = ButtonAt("浏览…", 548, 155, 104, 34, false);
+        string standard = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86), "Steam", "steamapps", "common", "RoadRash");
+        directory.Text = File.Exists(Path.Combine(adjacent, "RoadRash95.exe")) ? adjacent : File.Exists(Path.Combine(standard, "RoadRash95.exe")) ? standard : "";
+        pathRow.Controls.Add(directory, 0, 0);
+        browse = MakeButton("浏览…", false);
+        browse.Margin = Padding.Empty;
+        pathRow.Controls.Add(browse, 1, 0);
         browse.Click += delegate {
             using (var dialog = new FolderBrowserDialog()) {
                 dialog.Description = "选择包含 RoadRash95.exe 的游戏根目录";
@@ -149,24 +179,29 @@ public sealed class InstallerForm : Form
                 if (dialog.ShowDialog(this) == DialogResult.OK) { directory.Text = dialog.SelectedPath; Run(false, true); }
             }
         };
-        Controls.Add(new Label { Text = "请选择包含 RoadRash95.exe 和 TEXT 文件夹的目录。", Location = new Point(28, 198), AutoSize = true, ForeColor = Color.FromArgb(97, 110, 126) });
-        check = ButtonAt("检查目录", 28, 234, 122, 38, false);
+        body.Controls.Add(new Label { Text = "请选择包含 RoadRash95.exe 和 TEXT 文件夹的目录。", Dock = DockStyle.Fill, AutoSize = true, Margin = new Padding(0, 8, 0, 14), ForeColor = Color.FromArgb(97, 110, 126) }, 0, 2);
+        var actions = new FlowLayoutPanel { Dock = DockStyle.Fill, AutoSize = true, Margin = Padding.Empty };
+        body.Controls.Add(actions, 0, 3);
+        check = MakeButton("检查目录", false);
+        actions.Controls.Add(check);
         check.Click += delegate { Run(false, true); };
-        install = ButtonAt("安装汉化", 166, 234, 150, 38, true);
+        install = MakeButton("安装汉化", true);
+        actions.Controls.Add(install);
         install.Click += delegate { Run(false, false); };
-        restore = ButtonAt("还原英文", 332, 234, 150, 38, false);
+        restore = MakeButton("还原英文", false);
+        actions.Controls.Add(restore);
         restore.Click += delegate { Run(true, false); };
-        status = new Label { Text = "选择目录后，点击“检查目录”或直接安装。", Location = new Point(28, 294), Size = new Size(624, 28), ForeColor = Color.FromArgb(62, 78, 99) };
-        Controls.Add(status);
-        log = new TextBox { Location = new Point(28, 326), Size = new Size(624, 106), Multiline = true, ReadOnly = true, ScrollBars = ScrollBars.Vertical, BackColor = Color.White, BorderStyle = BorderStyle.FixedSingle, Text = "安装时自动校验版本并备份原文件。\r\n仅替换 TEXT\\ENU.DLL，可随时还原。", AccessibleName = "操作结果" };
-        Controls.Add(log);
-        Controls.Add(new Label { Text = "安装 / 还原前请退出游戏；Steam 中的游戏语言需设为 English。", Location = new Point(28, 451), Size = new Size(624, 26), ForeColor = Color.FromArgb(97, 110, 126), Font = new Font(Font.FontFamily, 9F) });
+        status = new Label { Name = "Status", Text = "选择目录后，点击“检查目录”或直接安装。", AutoSize = true, Dock = DockStyle.Fill, Margin = new Padding(0, 14, 0, 8), ForeColor = Color.FromArgb(62, 78, 99) };
+        body.Controls.Add(status, 0, 4);
+        log = new RichTextBox { Name = "ResultLog", Dock = DockStyle.Fill, MinimumSize = new Size(0, 112), Margin = new Padding(0, 0, 0, 12), ReadOnly = true, DetectUrls = false, WordWrap = true, ScrollBars = RichTextBoxScrollBars.Vertical, BackColor = Color.White, BorderStyle = BorderStyle.FixedSingle, Text = "安装时自动校验版本并备份原文件。\r\n仅替换 TEXT\\ENU.DLL，可随时还原。", AccessibleName = "操作结果" };
+        body.Controls.Add(log, 0, 5);
+        body.Controls.Add(new Label { Name = "Footer", Text = "安装 / 还原前请退出游戏；Steam 中的游戏语言需设为 English。", AutoSize = true, Dock = DockStyle.Fill, Margin = Padding.Empty, ForeColor = Color.FromArgb(97, 110, 126), Font = new Font(Font.FontFamily, 9F) }, 0, 6);
+        ResumeLayout(true);
     }
-    private Button ButtonAt(string text, int x, int y, int width, int height, bool primary)
+    private Button MakeButton(string text, bool primary)
     {
-        var button = new Button { Text = text, Location = new Point(x, y), Size = new Size(width, height), FlatStyle = FlatStyle.Flat, Cursor = Cursors.Hand, UseVisualStyleBackColor = false, BackColor = primary ? Color.FromArgb(35, 91, 186) : Color.White, ForeColor = primary ? Color.White : Color.FromArgb(40, 56, 79) };
+        var button = new Button { Text = text, AutoSize = true, MinimumSize = new Size(112, 38), Padding = new Padding(12, 3, 12, 3), Margin = new Padding(0, 0, 12, 0), FlatStyle = FlatStyle.Flat, Cursor = Cursors.Hand, UseVisualStyleBackColor = false, BackColor = primary ? Color.FromArgb(35, 91, 186) : Color.White, ForeColor = primary ? Color.White : Color.FromArgb(40, 56, 79) };
         button.FlatAppearance.BorderColor = primary ? button.BackColor : Color.FromArgb(204, 211, 220);
-        Controls.Add(button);
         return button;
     }
     private void Run(bool restoring, bool checking)
@@ -186,7 +221,7 @@ public sealed class InstallerForm : Form
             status.ForeColor = Color.FromArgb(168, 49, 49);
             log.Text = ex is UnauthorizedAccessException ? "没有写入此游戏目录的权限。请关闭游戏，并尝试以管理员身份运行安装器。" : ex.Message;
         }
-        finally { install.Enabled = restore.Enabled = browse.Enabled = check.Enabled = true; UseWaitCursor = false; }
+        finally { log.Select(0, 0); log.ScrollToCaret(); install.Enabled = restore.Enabled = browse.Enabled = check.Enabled = true; UseWaitCursor = false; }
     }
     [STAThread]
     public static void Main()
