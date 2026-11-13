@@ -1,0 +1,14 @@
+[
+  { "english": "Honest Phil", "chinese": "奥尼斯特菲尔", "offset": 1061620, "capacity": 16, "originalHex": "486f6e657374205068696c00", "gbkHex": "b0c2c4e1cbb9ccd8b7c6b6fb" },
+  { "english": "Tamil Vistini", "chinese": "泰米尔维斯蒂尼", "offset": 1061636, "capacity": 16, "originalHex": "54616d696c2056697374696e6900", "gbkHex": "cca9c3d7b6fbceaccbb9b5d9c4e1" },
+  { "english": "Magenta", "chinese": "玛真塔", "offset": 1061652, "capacity": 12, "originalHex": "4d6167656e746100", "gbkHex": "c2ead5e6cbfe" },
+  { "english": "Kinsel Andara", "chinese": "金塞尔安达拉", "offset": 1061664, "capacity": 16, "originalHex": "4b696e73656c20416e6461726100", "gbkHex": "bdf0c8fbb6fbb0b2b4efc0ad" },
+  { "english": "Ryder Zanta Storm", "chinese": "莱德赞塔斯托姆", "offset": 1061680, "capacity": 24, "originalHex": "5279646572205a616e74612053746f726d00", "gbkHex": "c0b3b5c2d4decbfecbb9cdd0c4b7" },
+  { "english": "Vida", "chinese": "维达", "offset": 1061704, "capacity": 8, "originalHex": "5669646100", "gbkHex": "ceacb4ef" },
+  { "english": "Veldaar", "chinese": "维尔达尔", "offset": 1061712, "capacity": 12, "originalHex": "56656c6461617200", "gbkHex": "ceacb6fbb4efb6fb" },
+  { "english": "Nuügi", "chinese": "努吉", "offset": 1061724, "capacity": 8, "originalHex": "4e75fc676900", "gbkHex": "c5acbcaa" },
+  { "english": "Loki", "chinese": "洛基", "offset": 1061732, "capacity": 8, "originalHex": "4c6f6b6900", "gbkHex": "c2e5bbf9" },
+  { "english": "Lars", "chinese": "拉尔斯", "offset": 1061740, "capacity": 8, "originalHex": "4c61727300", "gbkHex": "c0adb6fbcbb9" },
+  { "english": "Knrph", "chinese": "克纳夫", "offset": 1061748, "capacity": 8, "originalHex": "4b6e72706800", "gbkHex": "bfcbc4c9b7f2" },
+  { "english": "Jörgi", "chinese": "约尔吉", "offset": 1061756, "capacity": 8, "originalHex": "4af672676900", "gbkHex": "d4bcb6fbbcaa" }
+]

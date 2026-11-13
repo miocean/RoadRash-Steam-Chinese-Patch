@@ -1,0 +1,758 @@
+{
+  "baseline": "v1.3",
+  "status": "candidate-awaiting-runtime-and-installer-integration",
+  "translations": [
+    {
+      "id": 21,
+      "original": "Dodge nasty traffic and zombie pedestrians in the urban jungle.\n\n\n\n\n\nLength: %s %s",
+      "baseline": "在城市丛林里，躲开凶险的车流和行尸走肉般的行人。\n\n\n\n\n\n全长：%s %s",
+      "candidate": "在城市丛林里，躲开凶险的车流和行尸走肉般的行人。\n\n\n\n全长：%s %s",
+      "reason": "地图字段间距候选，待实机检查"
+    },
+    {
+      "id": 22,
+      "original": "Thunder through what's left of the great Northwestern timberland.\n\n\n\n\n\nLength: %s %s",
+      "baseline": "轰鸣着冲过美国西北部那片大森林所剩无几的林地。\n\n\n\n\n\n全长：%s %s",
+      "candidate": "轰鸣着冲过美国西北部那片大森林所剩无几的林地。\n\n\n\n全长：%s %s",
+      "reason": "地图字段间距候选，待实机检查"
+    },
+    {
+      "id": 23,
+      "original": "Blast through the traffic-congested suburban wasteland.\n\n\n\n\n\nLength: %s %s",
+      "baseline": "一路猛冲，穿越车流堵得水泄不通的郊区荒原。\n\n\n\n\n\n全长：%s %s",
+      "candidate": "一路猛冲，穿越车流堵得水泄不通的郊区荒原。\n\n\n\n全长：%s %s",
+      "reason": "地图字段间距候选，待实机检查"
+    },
+    {
+      "id": 24,
+      "original": "Avoid mindless tourists as you sail over the rolling slopes of the wine country.\n\n\n\n\nLength: %s %s",
+      "baseline": "在葡萄酒乡起伏的山坡上飞驰，别撞上那些不长脑子的游客。\n\n\n\n\n全长：%s %s",
+      "candidate": "在葡萄酒乡起伏的山坡上飞驰，别撞上那些不长脑子的游客。\n\n\n\n全长：%s %s",
+      "reason": "地图字段间距候选，待实机检查"
+    },
+    {
+      "id": 25,
+      "original": "Face dead man curves and sheer cliff walls along the narrow coastal highway.\n\n\n\n\nLength: %s %s",
+      "baseline": "在狭窄的沿海公路上，直面要命的急弯和陡直的崖壁。\n\n\n\n\n全长：%s %s",
+      "candidate": "在狭窄的沿海公路上，直面要命的急弯和陡直的崖壁。\n\n\n\n全长：%s %s",
+      "reason": "地图字段间距候选，待实机检查"
+    },
+    {
+      "id": 35,
+      "original": "Milwaukee Jon",
+      "baseline": "庄臣",
+      "candidate": "荘臣",
+      "reason": "用户指定姓名字形"
+    },
+    {
+      "id": 43,
+      "original": "Height: %s\nWeight: %s\nBike: %s\nCash: $%d\nAn ex-con with a death wish. Jon's daredevil style strikes fear in the hearts of seasoned riders.",
+      "baseline": "身高：%s\n体重：%s\n座驾：%s\n现金：$%d\n一个存心找死的前科犯。庄臣那种不要命的骑法，连身经百战的老车手看了都心里发毛。",
+      "candidate": "身高：%s\n体重：%s\n座驾：%s\n现金：$%d\n一个存心找死的前科犯。荘臣那种不要命的骑法，连身经百战的老车手看了都心里发毛。",
+      "reason": "用户指定姓名字形"
+    },
+    {
+      "id": 361,
+      "original": "Jon",
+      "baseline": "庄臣",
+      "candidate": "荘臣",
+      "reason": "用户指定姓名字形"
+    },
+    {
+      "id": 515,
+      "original": "Hey, Jon, with your brawn and my chains, we could go straight to the finish line.",
+      "baseline": "嘿，庄臣，你有一身蛮力，我有铁链，咱俩联手，直捣终点。",
+      "candidate": "嘿，荘臣，你有一身蛮力，我有铁链，咱俩联手，直捣终点。",
+      "reason": "用户指定姓名字形"
+    },
+    {
+      "id": 517,
+      "original": "Sorry I beat on you so bad, Jon, but I figured in prison you got used to physical abuse.",
+      "baseline": "庄臣，把你揍得那么惨，真不好意思。不过我寻思，你在牢里应该早就挨惯了吧。",
+      "candidate": "荘臣，把你揍得那么惨，真不好意思。不过我寻思，你在牢里应该早就挨惯了吧。",
+      "reason": "用户指定姓名字形"
+    },
+    {
+      "id": 524,
+      "original": "Yo, Jon, if some fool tries to mess with me, I give them a nudge from the inside of the turn.",
+      "baseline": "哟，庄臣，要是哪个傻子来惹我，我就在弯道内侧，轻轻顶他一把。",
+      "candidate": "哟，荘臣，要是哪个傻子来惹我，我就在弯道内侧，轻轻顶他一把。",
+      "reason": "用户指定姓名字形"
+    },
+    {
+      "id": 526,
+      "original": "Jon, stop messin' with me or your crushed fingers won't be able to dial 911.",
+      "baseline": "庄臣，别再找我麻烦。不然我把你手指碾碎，连911都拨不出去。",
+      "candidate": "荘臣，别再找我麻烦。不然我把你手指碾碎，连911都拨不出去。",
+      "reason": "用户指定姓名字形"
+    },
+    {
+      "id": 611,
+      "original": "Jon, I think we have a mutual interest in taking out the wimps on the track. Let's start with Slim.",
+      "baseline": "庄臣，咱俩应该都乐意清理赛道上那些软蛋吧。先拿汤姆开刀。",
+      "candidate": "荘臣，咱俩应该都乐意清理赛道上那些软蛋吧。先拿汤姆开刀。",
+      "reason": "用户指定姓名字形"
+    },
+    {
+      "id": 613,
+      "original": "Jon, you're the best argument I've seen for building more prisons.",
+      "baseline": "庄臣，看到你，我才知道这世上为什么还得多盖几座监狱。",
+      "candidate": "荘臣，看到你，我才知道这世上为什么还得多盖几座监狱。",
+      "reason": "用户指定姓名字形"
+    },
+    {
+      "id": 620,
+      "original": "Yo, Jon, watch out for Rhonda — she's into violence with a vengeance.",
+      "baseline": "哟，庄臣，小心塞利娜——她对打架这事儿，可是热衷得发狂。",
+      "candidate": "哟，荘臣，小心塞利娜——她对打架这事儿，可是热衷得发狂。",
+      "reason": "用户指定姓名字形"
+    },
+    {
+      "id": 622,
+      "original": "Back off, Milwaukee. I ain't down with your unruly behavior.",
+      "baseline": "退后，庄臣。你那套无法无天的行径，我可不奉陪。",
+      "candidate": "退后，荘臣。你那套无法无天的行径，我可不奉陪。",
+      "reason": "用户指定姓名字形"
+    },
+    {
+      "id": 707,
+      "original": "Hey, Jon, I say we take out each one of these punks one by one.",
+      "baseline": "嘿，庄臣，要我说，咱们把这帮小混混一个一个清理干净。",
+      "candidate": "嘿，荘臣，要我说，咱们把这帮小混混一个一个清理干净。",
+      "reason": "用户指定姓名字形"
+    },
+    {
+      "id": 709,
+      "original": "Jon, I think your parole officer would be very interested in what you do on the weekends.",
+      "baseline": "庄臣，我觉得你的假释监督官，准会很想知道你周末都干些什么。",
+      "candidate": "荘臣，我觉得你的假释监督官，准会很想知道你周末都干些什么。",
+      "reason": "用户指定姓名字形"
+    },
+    {
+      "id": 716,
+      "original": "You're the dopest rider on the course, Jon.",
+      "baseline": "庄臣，你可是整条赛道上最酷、最带劲的车手。",
+      "candidate": "荘臣，你可是整条赛道上最酷、最带劲的车手。",
+      "reason": "用户指定姓名字形"
+    },
+    {
+      "id": 718,
+      "original": "Yo, Jon, you turned on Bose. Now Bose will turn you to dust.",
+      "baseline": "哟，庄臣，敢背刺杰斐逊？现在，杰斐逊就把你碾成灰。",
+      "candidate": "哟，荘臣，敢背刺杰斐逊？现在，杰斐逊就把你碾成灰。",
+      "reason": "用户指定姓名字形"
+    },
+    {
+      "id": 803,
+      "original": "We got a good thing going, Jon — we drop enough riders and it's just the two of us.",
+      "baseline": "庄臣，咱俩这买卖不错：把别的车手放倒得够多，场上就只剩咱们两个了。",
+      "candidate": "荘臣，咱俩这买卖不错：把别的车手放倒得够多，场上就只剩咱们两个了。",
+      "reason": "用户指定姓名字形"
+    },
+    {
+      "id": 812,
+      "original": "Yo, Jon, a twist of the wrist can get you past most of those rowdy types.",
+      "baseline": "哟，庄臣，手腕一拧，赛道上大半的闹事鬼，你就都能甩过去。",
+      "candidate": "哟，荘臣，手腕一拧，赛道上大半的闹事鬼，你就都能甩过去。",
+      "reason": "用户指定姓名字形"
+    },
+    {
+      "id": 860,
+      "original": "Yo, Mike, that Milwaukee Jon will fight, but you have to pound on him to get things goin'.",
+      "baseline": "哟，迈克，庄臣那家伙倒是肯打，不过你得先狠狠捶他几下，才开得了场。",
+      "candidate": "哟，迈克，荘臣那家伙倒是肯打，不过你得先狠狠捶他几下，才开得了场。",
+      "reason": "用户指定姓名字形"
+    },
+    {
+      "id": 899,
+      "original": "Jon, you should've seen me waste this squid in a turn!  Led him into an oil patch and boom-boom, out went the lights!",
+      "baseline": "庄臣，真该让你看看，我怎么在弯里收拾那个菜鸟！把他引到油渍上，砰砰——两眼一黑，熄灯！",
+      "candidate": "荘臣，真该让你看看，我怎么在弯里收拾那个菜鸟！把他引到油渍上，砰砰——两眼一黑，熄灯！",
+      "reason": "用户指定姓名字形"
+    },
+    {
+      "id": 901,
+      "original": "Jon, I got half a mind to drag you through the dirt.",
+      "baseline": "庄臣，我真有点想把你拖过来，往泥地里狠狠蹭一遍。",
+      "candidate": "荘臣，我真有点想把你拖过来，往泥地里狠狠蹭一遍。",
+      "reason": "用户指定姓名字形"
+    },
+    {
+      "id": 910,
+      "original": "Jon, you cross me again and I'll strip you down and sell what's left to the junk man.",
+      "baseline": "庄臣，你再跟我作对，我就把你拆得一干二净，剩下的零件，全卖给收破烂的。",
+      "candidate": "荘臣，你再跟我作对，我就把你拆得一干二净，剩下的零件，全卖给收破烂的。",
+      "reason": "用户指定姓名字形"
+    },
+    {
+      "id": 320,
+      "original": "Eric",
+      "baseline": "Eric",
+      "candidate": "埃米",
+      "reason": "用户提供的经典译名截图"
+    },
+    {
+      "id": 321,
+      "original": "Buzz",
+      "baseline": "Buzz",
+      "candidate": "贝基",
+      "reason": "用户提供的经典译名截图"
+    },
+    {
+      "id": 322,
+      "original": "Druid",
+      "baseline": "Druid",
+      "candidate": "邦尼",
+      "reason": "用户提供的经典译名截图"
+    },
+    {
+      "id": 323,
+      "original": "Hog",
+      "baseline": "Hog",
+      "candidate": "卡尔",
+      "reason": "用户提供的经典译名截图"
+    },
+    {
+      "id": 324,
+      "original": "Serge",
+      "baseline": "Serge",
+      "candidate": "克里斯",
+      "reason": "用户提供的经典译名截图"
+    },
+    {
+      "id": 325,
+      "original": "Slash",
+      "baseline": "Slash",
+      "candidate": "黛西",
+      "reason": "用户提供的经典译名截图"
+    },
+    {
+      "id": 326,
+      "original": "Rich",
+      "baseline": "Rich",
+      "candidate": "德里克",
+      "reason": "用户提供的经典译名截图"
+    },
+    {
+      "id": 327,
+      "original": "Max",
+      "baseline": "Max",
+      "candidate": "埃里克",
+      "reason": "用户提供的经典译名截图"
+    },
+    {
+      "id": 328,
+      "original": "Ollie",
+      "baseline": "Ollie",
+      "candidate": "弗里达",
+      "reason": "用户提供的经典译名截图"
+    },
+    {
+      "id": 329,
+      "original": "Sid",
+      "baseline": "Sid",
+      "candidate": "格雷斯",
+      "reason": "用户提供的经典译名截图"
+    },
+    {
+      "id": 330,
+      "original": "Spike",
+      "baseline": "Spike",
+      "candidate": "哈里森",
+      "reason": "用户提供的经典译名截图"
+    },
+    {
+      "id": 331,
+      "original": "Zippy",
+      "baseline": "Zippy",
+      "candidate": "艾里斯",
+      "reason": "用户提供的经典译名截图"
+    },
+    {
+      "id": 332,
+      "original": "Sam",
+      "baseline": "Sam",
+      "candidate": "詹妮特",
+      "reason": "用户提供的经典译名截图"
+    },
+    {
+      "id": 333,
+      "original": "Buffy",
+      "baseline": "Buffy",
+      "candidate": "杰西",
+      "reason": "用户提供的经典译名截图"
+    },
+    {
+      "id": 334,
+      "original": "Chino",
+      "baseline": "Chino",
+      "candidate": "乔伊斯",
+      "reason": "用户提供的经典译名截图"
+    },
+    {
+      "id": 335,
+      "original": "Felix",
+      "baseline": "Felix",
+      "candidate": "凯特",
+      "reason": "用户提供的经典译名截图"
+    },
+    {
+      "id": 336,
+      "original": "Roz",
+      "baseline": "Roz",
+      "candidate": "卡伦",
+      "reason": "用户提供的经典译名截图"
+    },
+    {
+      "id": 337,
+      "original": "Slater",
+      "baseline": "Slater",
+      "candidate": "曼迪",
+      "reason": "用户提供的经典译名截图"
+    },
+    {
+      "id": 338,
+      "original": "Satish",
+      "baseline": "Satish",
+      "candidate": "马克",
+      "reason": "用户提供的经典译名截图"
+    },
+    {
+      "id": 339,
+      "original": "Ikira",
+      "baseline": "Ikira",
+      "candidate": "马尔斯",
+      "reason": "用户提供的经典译名截图"
+    },
+    {
+      "id": 340,
+      "original": "Jorg",
+      "baseline": "Jorg",
+      "candidate": "玛克辛",
+      "reason": "用户提供的经典译名截图"
+    },
+    {
+      "id": 341,
+      "original": "P.E.No.1",
+      "baseline": "P.E.No.1",
+      "candidate": "迈克尔",
+      "reason": "用户提供的经典译名截图"
+    },
+    {
+      "id": 342,
+      "original": "Stud",
+      "baseline": "Stud",
+      "candidate": "诺埃尔",
+      "reason": "用户提供的经典译名截图"
+    },
+    {
+      "id": 343,
+      "original": "Sven",
+      "baseline": "Sven",
+      "candidate": "保罗",
+      "reason": "用户提供的经典译名截图"
+    },
+    {
+      "id": 344,
+      "original": "Charley",
+      "baseline": "Charley",
+      "candidate": "彼得",
+      "reason": "用户提供的经典译名截图"
+    },
+    {
+      "id": 345,
+      "original": "Dex",
+      "baseline": "Dex",
+      "candidate": "雷克斯",
+      "reason": "用户提供的经典译名截图"
+    },
+    {
+      "id": 346,
+      "original": "Driller",
+      "baseline": "Driller",
+      "candidate": "斯帕克",
+      "reason": "用户提供的经典译名截图"
+    },
+    {
+      "id": 347,
+      "original": "Grubb",
+      "baseline": "Grubb",
+      "candidate": "斯特拉",
+      "reason": "用户提供的经典译名截图"
+    },
+    {
+      "id": 348,
+      "original": "Gunther",
+      "baseline": "Gunther",
+      "candidate": "史蒂芬",
+      "reason": "用户提供的经典译名截图"
+    },
+    {
+      "id": 349,
+      "original": "Spud",
+      "baseline": "Spud",
+      "candidate": "特伦斯",
+      "reason": "用户提供的经典译名截图"
+    },
+    {
+      "id": 350,
+      "original": "Ortega",
+      "baseline": "Ortega",
+      "candidate": "托马斯",
+      "reason": "用户提供的经典译名截图"
+    },
+    {
+      "id": 351,
+      "original": "Marshall",
+      "baseline": "Marshall",
+      "candidate": "温迪",
+      "reason": "用户提供的经典译名截图"
+    },
+    {
+      "id": 352,
+      "original": "O'Leary",
+      "baseline": "O'Leary",
+      "candidate": "维姬",
+      "reason": "用户提供的经典译名截图"
+    },
+    {
+      "id": 353,
+      "original": "O'Shea",
+      "baseline": "O'Shea",
+      "candidate": "特蕾西",
+      "reason": "用户提供的经典译名截图"
+    },
+    {
+      "id": 354,
+      "original": "Flynn",
+      "baseline": "Flynn",
+      "candidate": "托尼",
+      "reason": "用户提供的经典译名截图"
+    },
+    {
+      "id": 355,
+      "original": "Kelly",
+      "baseline": "Kelly",
+      "candidate": "里奇",
+      "reason": "用户提供的经典译名截图"
+    },
+    {
+      "id": 356,
+      "original": "Krupke",
+      "baseline": "Krupke",
+      "candidate": "珀尔",
+      "reason": "用户提供的经典译名截图"
+    },
+    {
+      "id": 81,
+      "original": "Select and sample from available background music or check out some exclusive rock videos.",
+      "baseline": "挑选并试听已有的背景音乐，或者欣赏几段独家摇滚乐录像。",
+      "candidate": "挑选并试听已有的背景音乐，或者欣赏几段独家摇滚MV。",
+      "reason": "音乐MV入口和介绍澄清，专用菜单标题使用空闲资源994"
+    },
+    {
+      "id": 496,
+      "original": "Check out some really kickin' rock videos!",
+      "baseline": "欣赏劲爆的摇滚录像！",
+      "candidate": "欣赏劲爆的摇滚MV！",
+      "reason": "音乐MV入口和介绍澄清，专用菜单标题使用空闲资源994"
+    },
+    {
+      "id": 994,
+      "original": "Videos (music jukebox only)",
+      "baseline": "",
+      "candidate": "音乐MV",
+      "reason": "音乐MV入口和介绍澄清，专用菜单标题使用空闲资源994"
+    },
+    {
+      "id": 175,
+      "original": "Electronic Arts® Presents\n\n\n\n\n\n\n\nA Buzz Puppet Production\nin association with\nPapyrus Design Group, Inc.",
+      "baseline": "",
+      "candidate": "Electronic Arts 出品\n\n\n\n\n\n\n\nBuzz Puppet 制作\n联合呈现\nPapyrus Design Group, Inc.",
+      "reason": "开场标题与版权信息汉化，保留原版颜色控制前缀"
+    },
+    {
+      "id": 381,
+      "original": "© 1996 Electronic Arts.  All rights reserved.",
+      "baseline": "",
+      "candidate": "1996年 Electronic Arts 版权所有。",
+      "reason": "开场标题与版权信息汉化，保留原版颜色控制前缀"
+    },
+    {
+      "id": 1001,
+      "original": "YRoad Rash™ PC",
+      "baseline": "",
+      "candidate": "Y《暴力摩托》电脑版",
+      "reason": "开场标题与版权信息汉化，保留原版颜色控制前缀"
+    },
+    {
+      "id": 1002,
+      "original": "Y© 1996 Electronic Arts and Papyrus Design Group, Inc.",
+      "baseline": "",
+      "candidate": "Y1996年 Electronic Arts、Papyrus Design Group, Inc. 版权所有",
+      "reason": "开场标题与版权信息汉化，保留原版颜色控制前缀"
+    },
+    {
+      "id": 0,
+      "original": "50965 993",
+      "baseline": "",
+      "candidate": "53348 994",
+      "reason": "音乐MV新增标签所需字符串表容量与末尾编号，内部元数据"
+    }
+  ],
+  "executable": {
+    "originalSha256": "9e40e25737149ab095061b7154797a35495faea97644fafc5a1e616f1400c968",
+    "candidateSha256": "8e3f0a16ef3f0bba83e4b36a0de5d7e3f5bf709fcd9f709263da968cb07a4e9b",
+    "offsets": [
+      "0x12e",
+      "0x179",
+      "0x180",
+      "0x181",
+      "0x182",
+      "0x360",
+      "0x361",
+      "0x362",
+      "0x363",
+      "0x364",
+      "0x368",
+      "0x369",
+      "0x36d",
+      "0x36e",
+      "0x371",
+      "0x375",
+      "0x376",
+      "0x384",
+      "0x387",
+      "0x5a732",
+      "0x5a733",
+      "0x5a734",
+      "0x5a737",
+      "0x5a738",
+      "0x5a739",
+      "0x5a752",
+      "0x5a753",
+      "0x5a754",
+      "0x5a757",
+      "0x5a758",
+      "0x5a759",
+      "0x5a778",
+      "0x5a779",
+      "0x5a77a",
+      "0x5a789",
+      "0x5a78a",
+      "0x5a78b",
+      "0x1032f4",
+      "0x1032f5",
+      "0x1032f6",
+      "0x1032f7",
+      "0x1032f8",
+      "0x1032f9",
+      "0x1032fa",
+      "0x1032fb",
+      "0x1032fc",
+      "0x1032fd",
+      "0x1032fe",
+      "0x1032ff",
+      "0x103304",
+      "0x103305",
+      "0x103306",
+      "0x103307",
+      "0x103308",
+      "0x103309",
+      "0x10330a",
+      "0x10330b",
+      "0x10330c",
+      "0x10330d",
+      "0x10330e",
+      "0x10330f",
+      "0x103310",
+      "0x103311",
+      "0x103314",
+      "0x103315",
+      "0x103316",
+      "0x103317",
+      "0x103318",
+      "0x103319",
+      "0x10331a",
+      "0x103320",
+      "0x103321",
+      "0x103322",
+      "0x103323",
+      "0x103324",
+      "0x103325",
+      "0x103326",
+      "0x103327",
+      "0x103328",
+      "0x103329",
+      "0x10332a",
+      "0x10332b",
+      "0x10332c",
+      "0x103330",
+      "0x103331",
+      "0x103332",
+      "0x103333",
+      "0x103334",
+      "0x103335",
+      "0x103336",
+      "0x103337",
+      "0x103338",
+      "0x103339",
+      "0x10333a",
+      "0x10333b",
+      "0x10333c",
+      "0x10333d",
+      "0x10333e",
+      "0x10333f",
+      "0x103340",
+      "0x103348",
+      "0x103349",
+      "0x10334a",
+      "0x10334b",
+      "0x103350",
+      "0x103351",
+      "0x103352",
+      "0x103353",
+      "0x103354",
+      "0x103355",
+      "0x103356",
+      "0x103357",
+      "0x10335c",
+      "0x10335d",
+      "0x10335e",
+      "0x10335f",
+      "0x103360",
+      "0x103364",
+      "0x103365",
+      "0x103366",
+      "0x103367",
+      "0x10336c",
+      "0x10336d",
+      "0x10336e",
+      "0x10336f",
+      "0x103370",
+      "0x103371",
+      "0x103374",
+      "0x103375",
+      "0x103376",
+      "0x103377",
+      "0x103378",
+      "0x103379",
+      "0x10337c",
+      "0x10337d",
+      "0x10337e",
+      "0x10337f",
+      "0x103380",
+      "0x103381",
+      "0x10585d",
+      "0x105860",
+      "0x19f208",
+      "0x19f209"
+    ],
+    "mandatoryVideoTitles": [
+      "Jessie（杰茜）",
+      "Duel（决斗）"
+    ],
+    "formattedBufferBytes": 128,
+    "musicVideoMenuResource": 994,
+    "aliases": [
+      {
+        "english": "Honest Phil",
+        "chinese": "奥尼斯特菲尔",
+        "offset": 1061620,
+        "capacity": 16,
+        "originalHex": "486f6e657374205068696c00",
+        "gbkHex": "b0c2c4e1cbb9ccd8b7c6b6fb"
+      },
+      {
+        "english": "Tamil Vistini",
+        "chinese": "泰米尔维斯蒂尼",
+        "offset": 1061636,
+        "capacity": 16,
+        "originalHex": "54616d696c2056697374696e6900",
+        "gbkHex": "cca9c3d7b6fbceaccbb9b5d9c4e1"
+      },
+      {
+        "english": "Magenta",
+        "chinese": "玛真塔",
+        "offset": 1061652,
+        "capacity": 12,
+        "originalHex": "4d6167656e746100",
+        "gbkHex": "c2ead5e6cbfe"
+      },
+      {
+        "english": "Kinsel Andara",
+        "chinese": "金塞尔安达拉",
+        "offset": 1061664,
+        "capacity": 16,
+        "originalHex": "4b696e73656c20416e6461726100",
+        "gbkHex": "bdf0c8fbb6fbb0b2b4efc0ad"
+      },
+      {
+        "english": "Ryder Zanta Storm",
+        "chinese": "莱德赞塔斯托姆",
+        "offset": 1061680,
+        "capacity": 24,
+        "originalHex": "5279646572205a616e74612053746f726d00",
+        "gbkHex": "c0b3b5c2d4decbfecbb9cdd0c4b7"
+      },
+      {
+        "english": "Vida",
+        "chinese": "维达",
+        "offset": 1061704,
+        "capacity": 8,
+        "originalHex": "5669646100",
+        "gbkHex": "ceacb4ef"
+      },
+      {
+        "english": "Veldaar",
+        "chinese": "维尔达尔",
+        "offset": 1061712,
+        "capacity": 12,
+        "originalHex": "56656c6461617200",
+        "gbkHex": "ceacb6fbb4efb6fb"
+      },
+      {
+        "english": "Nuügi",
+        "chinese": "努吉",
+        "offset": 1061724,
+        "capacity": 8,
+        "originalHex": "4e75fc676900",
+        "gbkHex": "c5acbcaa"
+      },
+      {
+        "english": "Loki",
+        "chinese": "洛基",
+        "offset": 1061732,
+        "capacity": 8,
+        "originalHex": "4c6f6b6900",
+        "gbkHex": "c2e5bbf9"
+      },
+      {
+        "english": "Lars",
+        "chinese": "拉尔斯",
+        "offset": 1061740,
+        "capacity": 8,
+        "originalHex": "4c61727300",
+        "gbkHex": "c0adb6fbcbb9"
+      },
+      {
+        "english": "Knrph",
+        "chinese": "克纳夫",
+        "offset": 1061748,
+        "capacity": 8,
+        "originalHex": "4b6e72706800",
+        "gbkHex": "bfcbc4c9b7f2"
+      },
+      {
+        "english": "Jörgi",
+        "chinese": "约尔吉",
+        "offset": 1061756,
+        "capacity": 8,
+        "originalHex": "4af672676900",
+        "gbkHex": "d4bcb6fbbcaa"
+      }
+    ],
+    "originalFormatHex": "2573203a209325739400",
+    "candidateFormatHex": "2573203a202225732200"
+  }
+}

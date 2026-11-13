@@ -1,0 +1,56 @@
+name: Publish v1.5
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/publish-v1.5.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: publish-v1.5
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: windows-latest
+    timeout-minutes: 10
+    steps:
+      - name: Fetch exact release commit
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          git init package
+          if ($LASTEXITCODE) { throw 'Init failed' }
+          Set-Location package
+          git remote add origin https://github.com/miocean/RoadRash-Steam-Chinese-Patch.git
+          git fetch --depth 1 origin $env:GITHUB_SHA
+          if ($LASTEXITCODE) { throw 'Fetch failed' }
+          git checkout --detach FETCH_HEAD
+          if ($LASTEXITCODE) { throw 'Checkout failed' }
+          if ((git rev-parse HEAD).Trim() -ne $env:GITHUB_SHA) { throw 'Unexpected commit' }
+      - name: Verify packages and publish
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          Set-Location package
+          $folder = 'release/v1.5'
+          $expected = @{
+            'RoadRash_Steam_ZH_v1.5.exe' = '1e8ea6bce3646d09fb7284856f5079c88affc86c04787295b884e80a780e28b7'
+            'RoadRash_Steam_ZH_v1.5.zip' = '8990ba4dcc735eda251af2733f68ad969e23d0ae24e2c6610c5feb61aaafcd80'
+          }
+          foreach ($name in $expected.Keys) {
+            if ((Get-FileHash -LiteralPath "$folder/$name" -Algorithm SHA256).Hash.ToLowerInvariant() -ne $expected[$name]) { throw "Hash mismatch for $name" }
+          }
+          $existing = gh release view v1.5 --repo miocean/RoadRash-Steam-Chinese-Patch --json isDraft,targetCommitish 2>$null
+          if ($LASTEXITCODE -eq 0) {
+            $state = $existing | ConvertFrom-Json
+            if (!$state.isDraft -or $state.targetCommitish -ne $env:GITHUB_SHA) { throw 'Existing release requires inspection' }
+          } else {
+            gh release create v1.5 --repo miocean/RoadRash-Steam-Chinese-Patch --target $env:GITHUB_SHA --title 'v1.5 汉化与独立可选功能正式版' --notes-file RELEASE_NOTES.md --draft
+            if ($LASTEXITCODE) { throw 'Draft creation failed' }
+          }
+          gh release upload v1.5 "$folder/RoadRash_Steam_ZH_v1.5.exe" "$folder/RoadRash_Steam_ZH_v1.5.zip" "$folder/SHA256SUMS.txt" --repo miocean/RoadRash-Steam-Chinese-Patch --clobber
+          if ($LASTEXITCODE) { throw 'Asset upload failed' }
+          gh release edit v1.5 --repo miocean/RoadRash-Steam-Chinese-Patch --draft=false --latest
+          if ($LASTEXITCODE) { throw 'Publication failed' }

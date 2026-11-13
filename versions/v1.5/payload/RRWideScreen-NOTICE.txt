@@ -1,0 +1,14 @@
+RoadRash30-MultiFix rendering component
+Authors: OBLPlife (original project) and magoowa (MultiFix).
+Source: https://github.com/magoowa/RoadRash30-MultiFix
+Upstream commit: c7b30d66cd1859503c7d2b8b09188d0ebd392780
+Version: 2.17.3
+License: PolyForm Noncommercial License 1.0.0
+License URL: https://polyformproject.org/licenses/noncommercial/1.0.0/
+
+Chinese patch adaptation, 2026-11-13
+Built with Zig/Clang. Adds RRWideInitialize for independent loading.
+Uses RRWideScreen.ini and RRWideScreen.log, with no ddraw.dll proxy.
+Disables encoding, save-dialog, controller, simulation, bike-colour,
+postcard-repair and process-priority changes. Keeps rendering and window support.
+Original Chinese language resources and the five-slot module are separate.

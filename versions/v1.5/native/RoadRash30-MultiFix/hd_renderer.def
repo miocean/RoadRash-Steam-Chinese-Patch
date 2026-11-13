@@ -1,0 +1,5 @@
+LIBRARY RRWideScreen
+EXPORTS
+    RRWideInitialize
+    RRHD_Init
+    RRHD_VersionTag DATA
